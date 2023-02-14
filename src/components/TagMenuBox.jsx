@@ -8,8 +8,8 @@ function TagMenuBox({posX,posY}) {
         height: "50px",
         border: "1px solid red",
         position: "absolute",
-        top: `${posY}px`,
-        left: `${posX}px`,
+        top: `${posY}%`,
+        left: `${posX}%`,
     }}>
         me!
     </div> );

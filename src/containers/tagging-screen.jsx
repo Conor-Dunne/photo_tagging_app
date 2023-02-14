@@ -14,12 +14,13 @@ function TaggingScreen() {
             setY("-1000");
             return
         }
-        console.log(e);
-        setX(`${e.nativeEvent.layerX}`)
-        setY(`${e.nativeEvent.layerY}`)
-        setTest(`${x}, ${y}`)
-    }
 
+        console.log(e)
+
+        setX(Math.round(`${e.nativeEvent.layerX / e.target.clientWidth * 100}`))
+        setY(Math.round(`${e.nativeEvent.layerY / e.target.clientHeight * 100}`))
+    }
+    console.log(test);
     return ( 
         <div
         id="container"
@@ -38,7 +39,7 @@ function TaggingScreen() {
         height: "200px",
         width: "200px"
     }}>
-        {test}
+        {`${x}, ${y}`}
         <TagMenuBox posX={x} posY={y}/>
     </div> 
         </div>
