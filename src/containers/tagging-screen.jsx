@@ -36,7 +36,8 @@ function TaggingScreen() {
         style={{
         position: "relative",
         border: "1px solid blue",
-        width: "80%"
+        width: "80%",
+        margin: "0 auto",
     }}>
         <img 
         src={testImage.src} 
