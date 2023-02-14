@@ -1,5 +1,6 @@
 import TagMenuBox from "../components/TagMenuBox";
 import { useState } from 'react';
+import testImage from "../testData";
 
 function TaggingScreen() {
         const [x, setX] = useState("20")
@@ -27,7 +28,6 @@ function TaggingScreen() {
         onClick={handleClick}
         style={{
             border: "1px solid pink",
-            height: "100vh",
             width: "100vw",
         }}
         >
@@ -36,12 +36,18 @@ function TaggingScreen() {
         style={{
         position: "relative",
         border: "1px solid blue",
-        height: "200px",
-        width: "200px"
+        width: "80%"
     }}>
-        {`${x}, ${y}`}
+        <img 
+        src={testImage.src} 
+        alt="test" 
+        style={{
+            width: '-webkit-fill-available',
+        }}
+        />
         <TagMenuBox posX={x} posY={y}/>
     </div> 
+    {`${x}, ${y}`}
         </div>
     );
 }
