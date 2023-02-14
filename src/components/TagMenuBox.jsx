@@ -1,7 +1,9 @@
 
 
 function TagMenuBox({posX,posY}) {
-    return ( <div style={{
+    return ( <div 
+        id="menuBox"
+        style={{
         width: "100px",
         height: "50px",
         border: "1px solid red",
