@@ -9,7 +9,7 @@ function TaggingScreen() {
 
     function handleClick(e) {
         console.log(e.target.id);
-        if (e.target.id === "menuBox") return;
+        if (e.target.id === "menuBox" || e.target.id ===  "checkBtn") return;
         if (e.target.id === "container") {
             setX("-1000");
             setY("-1000");
