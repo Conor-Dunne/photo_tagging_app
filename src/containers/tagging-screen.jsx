@@ -38,6 +38,7 @@ function TaggingScreen() {
         border: "1px solid blue",
         width: "80%",
         margin: "0 auto",
+        overflow: "hidden",
     }}>
         <img 
         src={testImage.src} 
