@@ -26,20 +26,12 @@ function TaggingScreen() {
         <div
         id="container"
         onClick={handleClick}
-        style={{
-            border: "1px solid pink",
-            width: "100vw",
-        }}
+        className="w-f flex flex-col justify-center items-center"
         >
             <div
         id="image"
-        style={{
-        position: "relative",
-        border: "1px solid blue",
-        width: "80%",
-        margin: "0 auto",
-        overflow: "hidden",
-    }}>
+        className="cursor-pointer relative w-4/5 m-0 overflow-hidden max-w-6xl"
+       >
         <img 
         src={testImage.src} 
         alt="test" 
