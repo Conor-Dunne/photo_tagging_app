@@ -39,7 +39,7 @@ function TaggingScreen() {
             width: '-webkit-fill-available',
         }}
         />
-        <TagMenuBox posX={x} posY={y}/>
+        <TagMenuBox posX={x} posY={y} imgData={testImage}/>
     </div> 
     {`${x}, ${y}`}
         </div>

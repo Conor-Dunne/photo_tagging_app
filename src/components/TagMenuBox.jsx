@@ -1,6 +1,11 @@
-function TagMenuBox({ posX, posY }) {
+function TagMenuBox({ posX, posY , imgData }) {
   function test() {
-    console.log("check");
+    const xRange = posX - imgData.coordsX;
+    const yRange = posY - imgData.coordsY;
+    if(xRange <= 5 && xRange >= -5 && yRange <= 5 && yRange >= -5 ) {
+      console.log("You found me!")
+    } else console.log("Not here")
+    
   }
 
   return (
