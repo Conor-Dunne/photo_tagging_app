@@ -29,7 +29,7 @@ function TaggingScreen() {
         >
             <div
         
-        className="cursor-pointer relative w-4/5 m-0 overflow-hidden max-h-screen max-w-md"
+        className="cursor-pointer relative w-4/5 m-0 max-h-screen max-w-md"
        >
         <img 
         id="image"
