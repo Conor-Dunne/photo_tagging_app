@@ -9,19 +9,18 @@ function TaggingScreen() {
 
     function handleClick(e) {
         console.log(e.target.id);
-        if (e.target.id === "menuBox" || e.target.id ===  "checkBtn") return;
+        console.log(e);
+        // if (e.target.id === "menuBox" || e.target.id ===  "checkBtn") return;
         if (e.target.id === "container") {
             setX("-1000");
             setY("-1000");
             return
         }
-
-        console.log(e)
+        if (e.target.id != "image") return;
 
         setX(Math.round(`${e.nativeEvent.layerX / e.target.clientWidth * 100}`))
         setY(Math.round(`${e.nativeEvent.layerY / e.target.clientHeight * 100}`))
     }
-    console.log(test);
     return ( 
         <div
         id="container"
@@ -29,10 +28,11 @@ function TaggingScreen() {
         className="w-f flex flex-col justify-center items-center"
         >
             <div
-        id="image"
-        className="cursor-pointer relative w-4/5 m-0 overflow-hidden max-w-6xl"
+        
+        className="cursor-pointer relative w-4/5 m-0 overflow-hidden max-h-screen max-w-md"
        >
         <img 
+        id="image"
         src={testImage.src} 
         alt="test" 
         style={{
