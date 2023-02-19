@@ -3,22 +3,19 @@ import { useState } from "react";
 import testImage from "../testData";
 
 function TaggingScreen() {
-  const [x, setX] = useState("20");
+  const [x, setX] = useState("-1000");
   const [y, setY] = useState("100");
-  const startTags = JSON.parse(JSON.stringify(testImage.targets));
+  const startTags = [...testImage.targets];
   const [tagsToFind, setTagsToFind] = useState(startTags);
-    const test = tagsToFind[0];
+
+  function handleCorrectAnswer(targetFound) {
+    const updatedTags = tagsToFind.slice();
+    updatedTags[tagsToFind.indexOf(targetFound)].isFound = true;
+    setTagsToFind(updatedTags);
+    console.log(updatedTags);
+  }
 
 
-//   function handleCorrectAnswer(targetFound) {
-    // const updatedTags = tagsToFind.slice();
-    // updatedTags[tagsToFind.indexOf(test)].isFound = true;
-    // setTagsToFind(updatedTags);
-    // console.log(updatedTags);
-//   }
-
-
-//   console.log(testImage.targets)
 
 
   function handleClick(e) {
@@ -47,7 +44,7 @@ function TaggingScreen() {
             width: "-webkit-fill-available",
           }}
         />
-        <TagMenuBox posX={x} posY={y} imgData={testImage} />
+        <TagMenuBox posX={x} posY={y} tagsToFind={tagsToFind} correctClick={handleCorrectAnswer} />
       </div>
       {`${x}, ${y}`}
     </div>

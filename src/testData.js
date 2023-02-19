@@ -20,4 +20,8 @@ const testImage = {
   ],
 };
 
+
+const testCopy = [...testImage.targets];
+console.log("testCopy", testCopy);
+
 export default testImage;
