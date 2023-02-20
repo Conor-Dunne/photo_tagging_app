@@ -1,6 +1,8 @@
 import TagMenuBox from "../components/TagMenuBox";
 import { useState } from "react";
 import testImage from "../testData";
+import GreenCircle from "../components/GreenCircle";
+
 
 function TaggingScreen() {
   const [x, setX] = useState("-1000");
@@ -45,6 +47,7 @@ function TaggingScreen() {
           }}
         />
         <TagMenuBox posX={x} posY={y} tagsToFind={tagsToFind} correctClick={handleCorrectAnswer} />
+        <GreenCircle />
       </div>
       {`${x}, ${y}`}
     </div>
