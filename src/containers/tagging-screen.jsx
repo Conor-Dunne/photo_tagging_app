@@ -9,12 +9,14 @@ function TaggingScreen() {
   const [y, setY] = useState("100");
   const startTags = [...testImage.targets];
   const [tagsToFind, setTagsToFind] = useState(startTags);
+  const [foundTargets, setFoundTargets] = useState([]);
 
   function handleCorrectAnswer(targetFound) {
     const updatedTags = tagsToFind.slice();
     updatedTags[tagsToFind.indexOf(targetFound)].isFound = true;
     setTagsToFind(updatedTags);
-    console.log(updatedTags);
+    setFoundTargets([...foundTargets, targetFound]);
+    console.log("found", foundTargets);
   }
 
 
@@ -47,7 +49,9 @@ function TaggingScreen() {
           }}
         />
         <TagMenuBox posX={x} posY={y} tagsToFind={tagsToFind} correctClick={handleCorrectAnswer} />
-        <GreenCircle />
+        {foundTargets.map((target) => (
+          <GreenCircle key={target.name} posX={target.coordsX - 3} posY={target.coordsY -3 } />
+        ))}
       </div>
       {`${x}, ${y}`}
     </div>
