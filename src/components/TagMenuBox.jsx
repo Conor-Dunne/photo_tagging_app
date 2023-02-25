@@ -36,15 +36,15 @@ function TagMenuBox({ posX, posY , tagsToFind, correctClick }) {
       onClick={()=> {
         checkIfcorrect(target)
         if (!correct) {
-      setBtnColor("bg-red-500");
+      setBtnColor("bg-red-300");
       setTimeout(() => {
-        setBtnColor("bg-green-300");
+        setBtnColor("bg-slate-300");
       }, 100); // delay for 1 second
     }
         }
       }
 
-      className={target.isFound? "pointer-events-none  bg-slate-400  p-1 rounded-sm shadow-md line-through" : `text-white text-lg ${btnColor} p-1 rounded-sm shadow-md text- `}
+      className={target.isFound? "pointer-events-none  bg-slate-400  p-1 rounded-sm shadow-md line-through" : `text-black text-lg ${btnColor} p-1 rounded-sm shadow-md text- `}
     
     >
       <h1
