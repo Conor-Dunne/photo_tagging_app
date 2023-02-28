@@ -37,7 +37,7 @@ function TaggingScreen() {
     <div
       id="container"
       onClick={handleClick}
-      className="flex flex-col justify-center items-center bg-black min-h-screen"
+      className="flex flex-col bg-black min-h-screen max-w-7xl"
     >
       <div className="cursor-pointer relative m-0">
         <img

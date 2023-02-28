@@ -15,7 +15,7 @@ const testImage = {
     {
       name: "R2-D2",
       coordsX: "75",
-      coordsY: "78",
+      coordsY: "79",
     },
   ],
 };

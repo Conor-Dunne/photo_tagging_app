@@ -6,7 +6,7 @@ function GreenCircle({posY, posX}) {
       style={{
         position: "absolute",
         top: `${posY+2}%`,
-        left: `${posX+2}%`,
+        left: `${posX+1}%`,
       }}
       >
       </div>
