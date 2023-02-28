@@ -1,6 +1,6 @@
 const testImage = {
   name: "test image",
-  src: "/src/assets/966126-video-game-art-video-game-characters-SNK-Capcom.png",
+  src: "/src/assets/wallpaperflare.com_wallpaper.jpg",
   targets: [
     {
       name: "Wendy",

@@ -5,8 +5,9 @@ import GreenCircle from "../components/GreenCircle";
 
 
 function TaggingScreen() {
-  const [x, setX] = useState("-1000");
-  const [y, setY] = useState("100");
+  const [x, setX] = useState("0");
+  const [y, setY] = useState("0");
+  const [hideMenuBox, setHideMenuBox] = useState(true);
   const startTags = [...testImage.targets];
   const [tagsToFind, setTagsToFind] = useState(startTags);
   const [foundTargets, setFoundTargets] = useState([]);
@@ -24,8 +25,7 @@ function TaggingScreen() {
 
   function handleClick(e) {
     if (e.target.id === "container") {
-      setX("-1000");
-      setY("-1000");
+      setHideMenuBox(false);
       return;
     }
     if (e.target.id != "image") return;
@@ -37,7 +37,7 @@ function TaggingScreen() {
     <div
       id="container"
       onClick={handleClick}
-      className="h-screen flex flex-col justify-center items-center bg-black"
+      className="flex flex-col justify-center items-center bg-black min-h-screen"
     >
       <div className="cursor-pointer relative m-0">
         <img
@@ -48,7 +48,7 @@ function TaggingScreen() {
             width: "-webkit-fill-available",
           }}
         />
-        <TagMenuBox posX={x} posY={y} tagsToFind={tagsToFind} correctClick={handleCorrectAnswer} />
+        <TagMenuBox posX={x} posY={y} tagsToFind={tagsToFind} correctClick={handleCorrectAnswer} isHidden={hideMenuBox} />
         {foundTargets.map((target) => (
           <GreenCircle key={target.name} posX={target.coordsX - 3} posY={target.coordsY -3 } />
         ))}
