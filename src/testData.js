@@ -3,19 +3,19 @@ const testImage = {
   src: "/src/assets/wallpaperflare.com_wallpaper.jpg",
   targets: [
     {
-      name: "Wendy",
-      coordsX: "99",
-      coordsY: "52",
+      name: "Johnny Bravo",
+      coordsX: "39",
+      coordsY: "36",
     },
     {
-      name: "Odlaw",
-      coordsX: "98",
-      coordsY: "84",
+      name: "Waldo",
+      coordsX: "15",
+      coordsY: "64",
     },
     {
-      name: "knee",
-      coordsX: "34",
-      coordsY: "67",
+      name: "R2-D2",
+      coordsX: "75",
+      coordsY: "78",
     },
   ],
 };

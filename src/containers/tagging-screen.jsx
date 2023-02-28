@@ -53,7 +53,9 @@ function TaggingScreen() {
           <GreenCircle key={target.name} posX={target.coordsX - 3} posY={target.coordsY -3 } />
         ))}
       </div>
+      <div className="text-white">
       {`${x}, ${y}`}
+      </div>
     </div>
   );
 }

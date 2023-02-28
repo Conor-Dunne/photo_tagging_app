@@ -5,8 +5,8 @@ function GreenCircle({posY, posX}) {
       className="w-8 h-8 border-solid border-4 border-green-300 rounded-full"
       style={{
         position: "absolute",
-        top: `${posY}%`,
-        left: `${posX}%`,
+        top: `${posY+2}%`,
+        left: `${posX+2}%`,
       }}
       >
       </div>

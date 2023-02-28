@@ -7,7 +7,7 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div className="bg-black h-full">
+    <div className="App">
       <TaggingScreen />
     </div>
   )
