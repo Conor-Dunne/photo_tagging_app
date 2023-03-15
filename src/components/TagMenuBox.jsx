@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function TagMenuBox({ posX, posY , tagsToFind, correctClick }) {
+function TagMenuBox({ posX, posY , tagsToFind, correctClick, isHidden }) {
 
   const [btnColor, setBtnColor] = useState("bg-green-300");
   let correct = false;
