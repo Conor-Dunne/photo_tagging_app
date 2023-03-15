@@ -3,7 +3,6 @@ import { useState } from "react";
 import testImage from "../testData";
 import GreenCircle from "../components/GreenCircle";
 
-
 function TaggingScreen() {
   const [x, setX] = useState("0");
   const [y, setY] = useState("0");
@@ -17,14 +16,11 @@ function TaggingScreen() {
     updatedTags[tagsToFind.indexOf(targetFound)].isFound = true;
     setTagsToFind(updatedTags);
     setFoundTargets([...foundTargets, targetFound]);
-    console.log("found", foundTargets);
   }
-
-
-
 
   function handleClick(e) {
     if (e.target.id === "container") {
+      console.log(e.target.id)
       setHideMenuBox(false);
       return;
     }
@@ -48,14 +44,22 @@ function TaggingScreen() {
             width: "-webkit-fill-available",
           }}
         />
-        <TagMenuBox posX={x} posY={y} tagsToFind={tagsToFind} correctClick={handleCorrectAnswer} isHidden={hideMenuBox} />
+        <TagMenuBox
+          posX={x}
+          posY={y}
+          tagsToFind={tagsToFind}
+          correctClick={handleCorrectAnswer}
+          isHidden={hideMenuBox}
+        />
         {foundTargets.map((target) => (
-          <GreenCircle key={target.name} posX={target.coordsX - 3} posY={target.coordsY -3 } />
+          <GreenCircle
+            key={target.name}
+            posX={target.coordsX - 3}
+            posY={target.coordsY - 3}
+          />
         ))}
       </div>
-      <div className="text-white">
-      {`${x}, ${y}`}
-      </div>
+      <div className="text-white">{`${x}, ${y}`}</div>
     </div>
   );
 }
