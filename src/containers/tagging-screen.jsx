@@ -3,10 +3,7 @@ import { useState } from "react";
 import testImage from "../testData";
 import GreenCircle from "../components/GreenCircle";
 
-function TaggingScreen() {
-  const [x, setX] = useState("0");
-  const [y, setY] = useState("0");
-  const [hideMenuBox, setHideMenuBox] = useState(true);
+function TaggingScreen({x,y,hideMenuBox}) {
   const startTags = [...testImage.targets];
   const [tagsToFind, setTagsToFind] = useState(startTags);
   const [foundTargets, setFoundTargets] = useState([]);
@@ -18,21 +15,9 @@ function TaggingScreen() {
     setFoundTargets([...foundTargets, targetFound]);
   }
 
-  function handleClick(e) {
-    if (e.target.id === "container") {
-      console.log(e.target.id)
-      setHideMenuBox(false);
-      return;
-    }
-    if (e.target.id != "image") return;
-
-    setX(Math.round(`${(e.nativeEvent.layerX / e.target.clientWidth) * 100}`));
-    setY(Math.round(`${(e.nativeEvent.layerY / e.target.clientHeight) * 100}`));
-  }
   return (
     <div
       id="container"
-      onClick={handleClick}
       className="flex flex-col bg-black min-h-screen max-w-7xl"
     >
       <div className="cursor-pointer relative m-0">
