@@ -28,6 +28,7 @@ function TaggingScreen({x,y,hideMenuBox}) {
     >
       <div className="cursor-pointer relative">
         <img
+          className={!gameStarted? "blur-sm" : null}
           id="image"
           src={image.src}
           alt="main image"

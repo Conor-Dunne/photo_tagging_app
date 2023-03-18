@@ -11,6 +11,7 @@ function App() {
 
   function handleClick(e) {
     console.log(e.target.id)
+    if (e.target.id != "image") return 
     setHideMenuBox(!hideMenuBox);
     setX(Math.round(`${(e.nativeEvent.layerX / e.target.clientWidth) * 100}`));
     setY(Math.round(`${(e.nativeEvent.layerY / e.target.clientHeight) * 100}`));
