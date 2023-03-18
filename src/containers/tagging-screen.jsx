@@ -2,11 +2,13 @@ import TagMenuBox from "../components/TagMenuBox";
 import { useState } from "react";
 import image from "../imageData";
 import GreenCircle from "../components/GreenCircle";
+import StartScreen from "./StartScreen";
 
 function TaggingScreen({x,y,hideMenuBox}) {
   const startTags = [...image.targets];
   const [tagsToFind, setTagsToFind] = useState(startTags);
   const [foundTargets, setFoundTargets] = useState([]);
+  const [gameStarted, setGameStarted] = useState(false);
 
   function handleCorrectAnswer(targetFound) {
     const updatedTags = tagsToFind.slice();
@@ -15,20 +17,22 @@ function TaggingScreen({x,y,hideMenuBox}) {
     setFoundTargets([...foundTargets, targetFound]);
   }
 
+  function startGame() {
+    setGameStarted(true);
+  }
+
   return (
     <div
       id="container"
-      className="flex flex-col bg-black min-h-screen max-w-7xl"
+      className="flex flex-col bg-black"
     >
-      <div className="cursor-pointer relative m-0">
+      <div className="cursor-pointer relative">
         <img
           id="image"
           src={image.src}
-          alt="test"
-          style={{
-            width: "-webkit-fill-available",
-          }}
+          alt="main image"
         />
+        {!gameStarted && <StartScreen startGame={startGame} />}
         <TagMenuBox
           posX={x}
           posY={y}
@@ -44,7 +48,6 @@ function TaggingScreen({x,y,hideMenuBox}) {
           />
         ))}
       </div>
-      <div className="text-white">{`${x}, ${y}`}</div>
     </div>
   );
 }
