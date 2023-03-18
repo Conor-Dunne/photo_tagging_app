@@ -18,7 +18,7 @@ function TagMenuBox({ posX, posY, tagsToFind, correctClick, isHidden }) {
       className={
         isHidden
           ? "hidden"
-          : "w-20 h-auto p-2 bg-slate-100 rounded-sm shadow-lg shadow-black-500/40 flex flex-col gap-1 z-10"
+          : "h-auto p-2 bg-slate-100 rounded-sm shadow-lg shadow-black-500/40 flex flex-col gap-1 z-10"
       }
       id="menuBox"
       style={{
@@ -27,7 +27,7 @@ function TagMenuBox({ posX, posY, tagsToFind, correctClick, isHidden }) {
         left: `${posX}%`,
       }}
     >
-      <div id="closeBox" className=" text-black">x</div>
+      
       {tagsToFind.map((target) => (
         <button
           id={target.name}
