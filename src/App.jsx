@@ -11,14 +11,7 @@ function App() {
 
   function handleClick(e) {
     console.log(e.target.id)
-    // if (e.target.id != "image") {
-    //   setHideMenuBox(true);
-    //   setX("0")
-    //   setY("0")
-    //   return
-    // }
-
-    setHideMenuBox(false);
+    setHideMenuBox(!hideMenuBox);
     setX(Math.round(`${(e.nativeEvent.layerX / e.target.clientWidth) * 100}`));
     setY(Math.round(`${(e.nativeEvent.layerY / e.target.clientHeight) * 100}`));
   }
