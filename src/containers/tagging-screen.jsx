@@ -1,10 +1,10 @@
 import TagMenuBox from "../components/TagMenuBox";
 import { useState } from "react";
-import testImage from "../testData";
+import image from "../imageData";
 import GreenCircle from "../components/GreenCircle";
 
 function TaggingScreen({x,y,hideMenuBox}) {
-  const startTags = [...testImage.targets];
+  const startTags = [...image.targets];
   const [tagsToFind, setTagsToFind] = useState(startTags);
   const [foundTargets, setFoundTargets] = useState([]);
 
@@ -23,7 +23,7 @@ function TaggingScreen({x,y,hideMenuBox}) {
       <div className="cursor-pointer relative m-0">
         <img
           id="image"
-          src={testImage.src}
+          src={image.src}
           alt="test"
           style={{
             width: "-webkit-fill-available",

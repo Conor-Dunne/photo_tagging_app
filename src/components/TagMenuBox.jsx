@@ -33,6 +33,7 @@ function TagMenuBox({ posX, posY, tagsToFind, correctClick, isHidden }) {
           id={target.name}
           key={target.name}
           onClick={() => {
+            console.log(target)
             checkIfcorrect(target);
             if (!correct) {
               setBtnColor("bg-red-300");
@@ -43,10 +44,13 @@ function TagMenuBox({ posX, posY, tagsToFind, correctClick, isHidden }) {
           }}
           className={
             target.isFound
-              ? "pointer-events-none  bg-slate-400  p-1 rounded-sm shadow-md line-through"
-              : `text-black text-lg ${btnColor} p-1 rounded-sm shadow-md text- `
+              ? "pointer-events-none flex gap-2 items-center bg-slate-400  p-1 rounded-sm shadow-md line-through"
+              :  ` flex gap-2 items-center  text-black text-lg ${btnColor} p-1 rounded-sm shadow-md text- `
           }
         >
+          <div id="icon-wrapper" className="w-10">
+            <img src={target.icon} className=" rounded-full"/>
+          </div>
           <h1 className="drop-shadow-md shadow-black font-medium">
             {target.name}
           </h1>
