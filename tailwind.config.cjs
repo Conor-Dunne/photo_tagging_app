@@ -5,7 +5,11 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'metal-pattern': "url('/assets/background-texture-metal-scratches.jpg')",
+      }
+    },
   },
   plugins: [],
 }

@@ -2,7 +2,19 @@ import { useState } from "react";
 
 function TagMenuBox({ posX, posY, tagsToFind, correctClick, isHidden, stopGame }) {
   const [btnColor, setBtnColor] = useState("bg-green-300");
+  const [targetsFound, setTargetsFound] = useState(0);
+  const [gameOver, setGameOver] = useState(false);
+  
   let correct = false;
+
+  function checkIfOver(){
+    console.log(targetsFound, tagsToFind.length)
+    if(targetsFound == tagsToFind.length -1 ) {
+      console.log("all found!")
+      setGameOver(true);
+      stopGame();
+    }
+  }
 
   function checkIfcorrect(target) {
     const xRange = posX - target.coordsX;
@@ -10,7 +22,10 @@ function TagMenuBox({ posX, posY, tagsToFind, correctClick, isHidden, stopGame }
     if (xRange <= 5 && xRange >= -5 && yRange <= 5 && yRange >= -5) {
       correctClick(target);
       correct = true;
+      setTargetsFound(targetsFound + 1);
     } else correct = false;
+
+    
   }
 
   return (
@@ -41,6 +56,7 @@ function TagMenuBox({ posX, posY, tagsToFind, correctClick, isHidden, stopGame }
                 setBtnColor("bg-green-300");
               }, 100); // delay for 1 second
             }
+            checkIfOver()
           }}
           className={
             target.isFound

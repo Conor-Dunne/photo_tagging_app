@@ -9,6 +9,7 @@ function App() {
   const [y, setY] = useState("0");
   const [hideMenuBox, setHideMenuBox] = useState(true);
   const [gameStarted, setGameStarted] = useState(false);
+  const [finishTime, setFinishTime] = useState(null);
 
 
   function handleClick(e) {
