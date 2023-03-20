@@ -8,6 +8,8 @@ function App() {
   const [x, setX] = useState("0");
   const [y, setY] = useState("0");
   const [hideMenuBox, setHideMenuBox] = useState(true);
+  const [gameStarted, setGameStarted] = useState(false);
+
 
   function handleClick(e) {
     console.log(e.target.id)
@@ -17,12 +19,20 @@ function App() {
     setY(Math.round(`${(e.nativeEvent.layerY / e.target.clientHeight) * 100}`));
   }
 
+  function startGame() {
+    setGameStarted(true);
+  }
+
+  function stopGame() {
+    setGameStarted(false);
+  }
+
   return (
     <div
     onClick={handleClick}
     className="App">
-      <Header />
-      <TaggingScreen x={x}  y={y} hideMenuBox = {hideMenuBox} />
+      <Header gameStarted={gameStarted} />
+      <TaggingScreen x={x}  y={y} hideMenuBox = {hideMenuBox} startGame={startGame} gameStarted={gameStarted} stopGame={stopGame} />
     </div>
   )
 }

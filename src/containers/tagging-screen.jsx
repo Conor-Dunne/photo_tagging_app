@@ -4,11 +4,11 @@ import image from "../imageData";
 import GreenCircle from "../components/GreenCircle";
 import StartScreen from "./StartScreen";
 
-function TaggingScreen({x,y,hideMenuBox}) {
+function TaggingScreen({x,y,hideMenuBox, startGame, stopGame, gameStarted}) {
   const startTags = [...image.targets];
   const [tagsToFind, setTagsToFind] = useState(startTags);
   const [foundTargets, setFoundTargets] = useState([]);
-  const [gameStarted, setGameStarted] = useState(false);
+  // const [gameStarted, setGameStarted] = useState(false);
 
   function handleCorrectAnswer(targetFound) {
     const updatedTags = tagsToFind.slice();
@@ -17,9 +17,9 @@ function TaggingScreen({x,y,hideMenuBox}) {
     setFoundTargets([...foundTargets, targetFound]);
   }
 
-  function startGame() {
-    setGameStarted(true);
-  }
+  // function startGame() {
+  //   setGameStarted(true);
+  // }
 
   return (
     <div
@@ -37,6 +37,7 @@ function TaggingScreen({x,y,hideMenuBox}) {
         <TagMenuBox
           posX={x}
           posY={y}
+          stopGame={stopGame}
           tagsToFind={tagsToFind}
           correctClick={handleCorrectAnswer}
           isHidden={hideMenuBox}

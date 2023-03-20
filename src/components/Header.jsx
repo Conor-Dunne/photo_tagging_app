@@ -1,12 +1,15 @@
 import React from 'react'
+import Timer from './Timer'
 
-function Header() {
+
+function Header({gameStarted}) {
   return (
     <div className='sticky top-0 z-10 px-3 py-5 bg-black w-full'>
       <header className='flex justify-between max-w-7xl mx-auto'>
         <div>
             <h1>Hello</h1>
             </div>
+            <Timer gameStarted={gameStarted} />
             <div>
                 <h1>Yay!</h1>
             </div>

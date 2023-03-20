@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function TagMenuBox({ posX, posY, tagsToFind, correctClick, isHidden }) {
+function TagMenuBox({ posX, posY, tagsToFind, correctClick, isHidden, stopGame }) {
   const [btnColor, setBtnColor] = useState("bg-green-300");
   let correct = false;
 
@@ -56,6 +56,9 @@ function TagMenuBox({ posX, posY, tagsToFind, correctClick, isHidden }) {
           </h1>
         </button>
       ))}
+      <button
+      onClick={()=> stopGame()}
+      >stop</button>
     </div>
   );
 }
