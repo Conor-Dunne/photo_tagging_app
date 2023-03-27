@@ -4,7 +4,7 @@ import db from "../firebase"
 
 function leaderboard() {
 
-    const [leaderboard, setLeaderBoard] = useState([{ name: "Loading", id: "initial"}]);
+    const [leaderboard, setLeaderBoard] = useState([{ name: "Loading...", id: "initial"}]);
 
     useEffect(() => {
         onSnapshot(collection(db, "leaderboard"), (snapshot) => {

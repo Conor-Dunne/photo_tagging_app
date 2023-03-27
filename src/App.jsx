@@ -28,11 +28,15 @@ function App() {
     setGameStarted(false);
   }
 
+  function getFinishTime(time) {
+    setFinishTime(time)
+  }
+
   return (
     <div
     onClick={handleClick}
     className="App">
-      <Header gameStarted={gameStarted} />
+      <Header gameStarted={gameStarted} getFinishTime={getFinishTime} />
       <TaggingScreen x={x}  y={y} hideMenuBox = {hideMenuBox} startGame={startGame} gameStarted={gameStarted} stopGame={stopGame} />
     </div>
   )
