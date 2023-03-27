@@ -10,6 +10,8 @@ function App() {
   const [hideMenuBox, setHideMenuBox] = useState(true);
   const [gameStarted, setGameStarted] = useState(false);
   const [finishTime, setFinishTime] = useState(null);
+  const [gameOver, setGameOver] = useState(false);
+
 
 
   function handleClick(e) {
@@ -37,7 +39,7 @@ function App() {
     onClick={handleClick}
     className="App">
       <Header gameStarted={gameStarted} getFinishTime={getFinishTime} />
-      <TaggingScreen x={x}  y={y} hideMenuBox = {hideMenuBox} startGame={startGame} gameStarted={gameStarted} stopGame={stopGame} />
+      <TaggingScreen x={x}  y={y} hideMenuBox = {hideMenuBox} startGame={startGame} gameStarted={gameStarted} stopGame={stopGame} setGameOver={setGameOver} gameOver={gameOver} />
     </div>
   )
 }

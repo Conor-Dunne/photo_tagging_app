@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-function TagMenuBox({ posX, posY, tagsToFind, correctClick, isHidden, stopGame }) {
+function TagMenuBox({ posX, posY, tagsToFind, correctClick, isHidden, stopGame, setGameOver }) {
   const [btnColor, setBtnColor] = useState("bg-green-300");
   const [targetsFound, setTargetsFound] = useState(0);
-  const [gameOver, setGameOver] = useState(false);
+  // const [gameOver, setGameOver] = useState(false);
   
   let correct = false;
 
