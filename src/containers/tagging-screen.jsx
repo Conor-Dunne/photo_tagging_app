@@ -8,7 +8,6 @@ function TaggingScreen({x,y,hideMenuBox, startGame, stopGame, gameStarted, setGa
   const startTags = [...image.targets];
   const [tagsToFind, setTagsToFind] = useState(startTags);
   const [foundTargets, setFoundTargets] = useState([]);
-  // const [gameStarted, setGameStarted] = useState(false);
 
   function handleCorrectAnswer(targetFound) {
     const updatedTags = tagsToFind.slice();
@@ -17,9 +16,6 @@ function TaggingScreen({x,y,hideMenuBox, startGame, stopGame, gameStarted, setGa
     setFoundTargets([...foundTargets, targetFound]);
   }
 
-  // function startGame() {
-  //   setGameStarted(true);
-  // }
 
   return (
     <div
