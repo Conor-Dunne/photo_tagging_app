@@ -48,6 +48,7 @@ function TaggingScreen({x,y,hideMenuBox, startGame, stopGame, gameStarted, setGa
             key={target.name}
             posX={target.coordsX - 3}
             posY={target.coordsY - 3}
+            gameOver = {gameOver}
           />
         ))}
       </div>

@@ -28,6 +28,7 @@ function App() {
 
   function stopGame() {
     setGameStarted(false);
+    setHideMenuBox(true);
   }
 
   function getFinishTime(time) {
