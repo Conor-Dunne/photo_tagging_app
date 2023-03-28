@@ -8,9 +8,7 @@ function TagMenuBox({ posX, posY, tagsToFind, correctClick, isHidden, stopGame, 
   let correct = false;
 
   function checkIfOver(){
-    console.log(targetsFound, tagsToFind.length)
     if(targetsFound == tagsToFind.length -1 ) {
-      console.log("all found!")
       setGameOver(true);
       stopGame();
     }
@@ -48,7 +46,6 @@ function TagMenuBox({ posX, posY, tagsToFind, correctClick, isHidden, stopGame, 
           id={target.name}
           key={target.name}
           onClick={() => {
-            console.log(target)
             checkIfcorrect(target);
             if (!correct) {
               setBtnColor("bg-red-300");
