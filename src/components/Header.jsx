@@ -4,7 +4,7 @@ import Timer from './Timer'
 
 function Header({gameStarted, getFinishTime}) {
   return (
-    <div className='sticky top-0 z-10 px-3 py-5  bg-slate-900 w-full'>
+    <div className='sticky top-0 z-10 px-3 py-5 bg-black w-full'>
       <header className='flex justify-between max-w-7xl mx-auto'>
         <div>
             <h1>Hello</h1>
