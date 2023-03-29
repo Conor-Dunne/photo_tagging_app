@@ -22,9 +22,11 @@ const StartScreen = ({ startGame, icons }) => {
             
             ))}
             </div>
-        <h1 className="text-2xl font-semibold drop-shadow-lg">
-          2. Beat the best time!
-        </h1>
+            <div className=" w-full text-center">
+          <h1 className="text-2xl font-semibold drop-shadow-lg shadow-black">
+            2. Beat the best time!
+          </h1>
+        </div>
         <button
           className=" bg-red-500 px-5 py-2 rounded-3xl shadow-lg font-semibold text-2xl tracking-wide"
           onClick={() => startGame()}

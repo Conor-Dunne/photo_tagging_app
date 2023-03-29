@@ -7,14 +7,14 @@ import db from "../firebase"
 
 function FinishScreen({ time , icons }) {
   const [name, setName] = useState("");
-
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const handleNewEntry = async () => {
    
     event.preventDefault();
     const collectionRef = collection(db, "leaderboard");
     const payload = { name, time };
     await addDoc(collectionRef, payload);
-    console.log("New entry")
+    setIsSubmitted(true)
   };
 
   return (
@@ -39,7 +39,7 @@ function FinishScreen({ time , icons }) {
         </h1>
         {<TimeDisplay time={time} />}
         <form 
-        className="flex flex-col gap-3 justify-center"
+        className={isSubmitted ? "hidden" : "flex flex-col gap-3 justify-center"}
         onSubmit={handleNewEntry}>
           <label className="flex flex-col items-center gap-3" htmlFor="name">
             Enter your name:
