@@ -51,7 +51,7 @@ function App() {
         gameOver={gameOver}
         icons = {targets}
       />
-      {gameOver && <FinishScreen time={finishTime} />}
+      {gameOver && <FinishScreen time={finishTime} icons={targets.targets} />}
     </div>
   );
 }

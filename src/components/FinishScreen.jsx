@@ -5,7 +5,7 @@ import { onSnapshot, collection, addDoc } from "firebase/firestore";
 import db from "../firebase"
 
 
-function FinishScreen({ time }) {
+function FinishScreen({ time , icons }) {
   const [name, setName] = useState("");
 
   const handleNewEntry = async () => {
@@ -25,20 +25,15 @@ function FinishScreen({ time }) {
             Congratulations!
           </h1>
         </div>
-        <div className="flex justify-center gap-3 w-full">
-          <img
-            className="rounded-full w-20 shadow-slate-500 shadow-md outline"
-            src="public\assets\icons\johnny-bravo.PNG"
-          />
-          <img
-            className="rounded-full w-20 shadow-slate-500 shadow-md outline"
-            src="public\assets\icons\waldo.PNG"
-          />
-          <img
-            className="rounded-full w-20 shadow-slate-500 shadow-md outline"
-            src="public\assets\icons\r2d2.PNG"
-          />
-        </div>
+        <div className='flex gap-3'>
+            {icons.map((icon) => (
+                        <img
+                        className= "rounded-full w-10 outline"
+                        src={icon.icon}
+                      />
+            
+            ))}
+            </div>
         <h1 className="text-2xl font-semibold drop-shadow-lg">
           Your finish time is
         </h1>
