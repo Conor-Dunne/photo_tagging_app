@@ -49,7 +49,7 @@ function TagMenuBox({ posX, posY, tagsToFind, correctClick, isHidden, stopGame, 
             if (!correct) {
               setBtnColor("bg-red-300");
               setTimeout(() => {
-                setBtnColor("bg-green-300");
+                setBtnColor("bg-white");
               }, 100); // delay for 1 second
             }
             checkIfOver()
@@ -57,7 +57,7 @@ function TagMenuBox({ posX, posY, tagsToFind, correctClick, isHidden, stopGame, 
           className={
             target.isFound
               ? "pointer-events-none flex gap-2 items-center bg-slate-400  p-1 rounded-sm shadow-md line-through"
-              :  ` flex gap-2 items-center  text-black text-lg ${btnColor} p-1 rounded-sm shadow-md`
+              :  ` flex gap-2 items-center  text-black text-sm ${btnColor} p-1 rounded-sm shadow-md`
           }
         >
           <div id="icon-wrapper" className="w-10">
