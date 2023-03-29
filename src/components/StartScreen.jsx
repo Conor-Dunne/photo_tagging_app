@@ -1,7 +1,7 @@
 import React from "react";
-import Leaderboard from "../components/Leaderboard";
+import Leaderboard from "./Leaderboard";
 
-const StartScreen = ({ startGame }) => {
+const StartScreen = ({ startGame, icons }) => {
   return (
     <div
       id="start-screen"
@@ -13,20 +13,15 @@ const StartScreen = ({ startGame }) => {
             1. Find these characters
           </h1>
         </div>
-        <div className="flex justify-center gap-3 w-full">
-          <img
-            className="rounded-full w-20 shadow-slate-500 shadow-md outline"
-            src="public\assets\icons\johnny-bravo.PNG"
-          />
-          <img
-            className="rounded-full w-20 shadow-slate-500 shadow-md outline"
-            src="public\assets\icons\waldo.PNG"
-          />
-          <img
-            className="rounded-full w-20 shadow-slate-500 shadow-md outline"
-            src="public\assets\icons\r2d2.PNG"
-          />
-        </div>
+        <div className='flex gap-3'>
+            {icons.map((icon) => (
+                        <img
+                        className= "rounded-full w-10 outline"
+                        src={icon.icon}
+                      />
+            
+            ))}
+            </div>
         <h1 className="text-2xl font-semibold drop-shadow-lg">
           2. Beat the best time!
         </h1>

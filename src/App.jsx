@@ -49,6 +49,7 @@ function App() {
         stopGame={stopGame}
         setGameOver={setGameOver}
         gameOver={gameOver}
+        icons = {targets}
       />
       {gameOver && <FinishScreen time={finishTime} />}
     </div>

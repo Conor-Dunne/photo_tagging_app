@@ -2,12 +2,12 @@ import TagMenuBox from "../components/TagMenuBox";
 import { useState } from "react";
 import image from "../imageData";
 import GreenCircle from "../components/GreenCircle";
-import StartScreen from "./StartScreen";
+import StartScreen from "../components/StartScreen";
 
-function TaggingScreen({x,y,hideMenuBox, startGame, stopGame, gameStarted, setGameOver, gameOver, foundTargets, setFoundTargets}) {
+function TaggingScreen({x,y,hideMenuBox, startGame, stopGame, gameStarted, setGameOver, gameOver, foundTargets, setFoundTargets, icons}) {
   const startTags = [...image.targets];
   const [tagsToFind, setTagsToFind] = useState(startTags);
-  // const [foundTargets, setFoundTargets] = useState([]);
+
 
   function handleCorrectAnswer(targetFound) {
     const updatedTags = tagsToFind.slice();
@@ -29,7 +29,7 @@ function TaggingScreen({x,y,hideMenuBox, startGame, stopGame, gameStarted, setGa
           src={image.src}
           alt="main image"
         />
-        {!gameStarted && !gameOver && <StartScreen startGame={startGame} />}
+        {!gameStarted && !gameOver && <StartScreen startGame={startGame} icons={icons.targets} />}
         <TagMenuBox
           posX={x}
           posY={y}

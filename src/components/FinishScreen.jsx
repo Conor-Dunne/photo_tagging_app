@@ -19,7 +19,7 @@ function FinishScreen({ time }) {
 
   return (
     <div className="flex justify-center pt-32 gap-3 min-w-full min-h-full absolute top-0 left-0">
-      <div className="flex flex-col items-center p-6 rounded-sm shadow-black shadow-2xl h-fit gap-6 bg-metal-pattern bg-cover">
+      <div className="sticky top-24 flex flex-col items-center p-6 rounded-sm shadow-black shadow-2xl h-fit gap-6 bg-metal-pattern bg-cover">
         <div className="text-center">
           <h1 className="text-2xl font-semibold drop-shadow-xl tracking-wide">
             Congratulations!

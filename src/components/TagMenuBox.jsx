@@ -1,9 +1,8 @@
 import { useState } from "react";
 
 function TagMenuBox({ posX, posY, tagsToFind, correctClick, isHidden, stopGame, setGameOver }) {
-  const [btnColor, setBtnColor] = useState("bg-green-300");
+  const [btnColor, setBtnColor] = useState("bg-white");
   const [targetsFound, setTargetsFound] = useState(0);
-  // const [gameOver, setGameOver] = useState(false);
   
   let correct = false;
 
@@ -58,7 +57,7 @@ function TagMenuBox({ posX, posY, tagsToFind, correctClick, isHidden, stopGame, 
           className={
             target.isFound
               ? "pointer-events-none flex gap-2 items-center bg-slate-400  p-1 rounded-sm shadow-md line-through"
-              :  ` flex gap-2 items-center  text-black text-lg ${btnColor} p-1 rounded-sm shadow-md text- `
+              :  ` flex gap-2 items-center  text-black text-lg ${btnColor} p-1 rounded-sm shadow-md`
           }
         >
           <div id="icon-wrapper" className="w-10">
@@ -69,9 +68,6 @@ function TagMenuBox({ posX, posY, tagsToFind, correctClick, isHidden, stopGame, 
           </h1>
         </button>
       ))}
-      <button
-      onClick={()=> stopGame()}
-      >stop</button>
     </div>
   );
 }
