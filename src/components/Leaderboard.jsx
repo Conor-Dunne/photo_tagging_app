@@ -25,8 +25,8 @@ function leaderboard() {
     
 
   return (
-    <div className='w-full h-32 overflow-scroll'>
-      <h1 className=' underline text-center mb-3'>Leaderboard</h1>
+    <div className='w-full'>
+      <h1 className=' underline text-center mb-3 text-xl tracking-wide font-bold'>Leaderboard</h1>
       <ul>
         {leaderboard.map((user, index) => (
             <li key={user.id} >{

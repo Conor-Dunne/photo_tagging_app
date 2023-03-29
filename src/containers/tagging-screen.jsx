@@ -14,6 +14,7 @@ function TaggingScreen({x,y,hideMenuBox, startGame, stopGame, gameStarted, setGa
     updatedTags[tagsToFind.indexOf(targetFound)].isFound = true;
     setTagsToFind(updatedTags);
     setFoundTargets([...foundTargets, targetFound]);
+    console.log(startTags);
   }
 
 

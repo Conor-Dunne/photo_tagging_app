@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import TimeDisplay from "./TimeDisplay";
 
-const Timer = ({ gameStarted, getFinishTime }) => {
+const Timer = ({ gameStarted, getFinishTime, restarted}) => {
   const [time, setTime] = useState(0);
 
   useEffect(() => {
@@ -13,12 +13,10 @@ const Timer = ({ gameStarted, getFinishTime }) => {
 
     if(!gameStarted) getFinishTime(time);
 
-    return () => clearInterval(intervalId);
-  }, [gameStarted, time]);
+    if(restarted) setTime(0);
 
-  // const minutes = Math.floor((time % 360000) / 6000);
-  // const seconds = Math.floor((time % 6000) / 100);
-  // const milliseconds = time % 100;
+    return () => clearInterval(intervalId);
+  }, [gameStarted, time, restarted]);
 
   return (
     <div>

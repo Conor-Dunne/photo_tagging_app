@@ -2,19 +2,17 @@ import React, { useState } from "react";
 import Leaderboard from "../components/Leaderboard";
 import TimeDisplay from "./TimeDisplay";
 import { onSnapshot, collection, addDoc } from "firebase/firestore";
-import db from "../firebase"
+import db from "../firebase";
 
-
-function FinishScreen({ time , icons }) {
+function FinishScreen({ time, icons, restart }) {
   const [name, setName] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const handleNewEntry = async () => {
-   
     event.preventDefault();
     const collectionRef = collection(db, "leaderboard");
     const payload = { name, time };
     await addDoc(collectionRef, payload);
-    setIsSubmitted(true)
+    setIsSubmitted(true);
   };
 
   return (
@@ -25,22 +23,23 @@ function FinishScreen({ time , icons }) {
             Congratulations!
           </h1>
         </div>
-        <div className='flex gap-3'>
-            {icons.map((icon) => (
-                        <img
-                        className= "rounded-full w-10 outline"
-                        src={icon.icon}
-                      />
-            
-            ))}
-            </div>
+        <div className="flex gap-3">
+          {icons.map((icon, index) => (
+            <img 
+            key={index + 1}
+            className="rounded-full w-10 outline" src={icon.icon} />
+          ))}
+        </div>
         <h1 className="text-2xl font-semibold drop-shadow-lg">
           Your finish time is
         </h1>
         {<TimeDisplay time={time} />}
-        <form 
-        className={isSubmitted ? "hidden" : "flex flex-col gap-3 justify-center"}
-        onSubmit={handleNewEntry}>
+        <form
+          className={
+            isSubmitted ? "hidden" : "flex flex-col gap-3 justify-center"
+          }
+          onSubmit={handleNewEntry}
+        >
           <label className="flex flex-col items-center gap-3" htmlFor="name">
             Enter your name:
             <input
@@ -48,12 +47,24 @@ function FinishScreen({ time , icons }) {
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
+              required
             />
           </label>
-          <button 
-          className=" bg-red-600 rounded-md p-3 cursor-pointer"
-          type="submit">Submit</button>
+          <button
+            className=" bg-green-600 rounded-md p-3 cursor-pointer"
+            type="submit"
+          >
+            Submit
+          </button>
         </form>
+        <button
+          onClick={restart}
+          className={
+            !isSubmitted ? "hidden" : " bg-blue-600 shadow-lg font-bold rounded-md p-3 cursor-pointer"
+          }
+        >
+          RESTART
+        </button>
         <Leaderboard />
       </div>
     </div>

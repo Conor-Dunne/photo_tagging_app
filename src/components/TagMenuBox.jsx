@@ -10,12 +10,15 @@ function TagMenuBox({ posX, posY, tagsToFind, correctClick, isHidden, stopGame, 
     if(targetsFound == tagsToFind.length -1 ) {
       setGameOver(true);
       stopGame();
+      setTargetsFound(0)
     }
   }
 
   function checkIfcorrect(target) {
     const xRange = posX - target.coordsX;
     const yRange = posY - target.coordsY;
+    console.log(targetsFound, tagsToFind.length -1)
+
     if (xRange <= 5 && xRange >= -5 && yRange <= 5 && yRange >= -5) {
       correctClick(target);
       correct = true;

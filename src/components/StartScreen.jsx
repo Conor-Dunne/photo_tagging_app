@@ -14,8 +14,9 @@ const StartScreen = ({ startGame, icons }) => {
           </h1>
         </div>
         <div className='flex gap-3'>
-            {icons.map((icon) => (
+            {icons.map((icon, index) => (
                         <img
+                        key={index + 1}
                         className= "rounded-full w-10 outline"
                         src={icon.icon}
                       />
